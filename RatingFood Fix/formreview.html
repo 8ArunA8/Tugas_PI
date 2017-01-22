@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Form Review</title>
+
+    <!-- Bootstrap -->
+  
+    <link href="css/dcalendar.picker.css" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	
+
+<style type="text/css">
+#deceased{
+    background-color:#FFF3F5;
+	padding-top:10px;
+	margin-bottom:10px;
+}
+.remove_field{
+	float:right;	
+	cursor:pointer;
+	position : absolute;
+}
+.remove_field:hover{
+	text-decoration:none;
+}
+</style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/dcalendar.picker.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script type='text/javascript'>
+	$(function() {
+		//calendar call function
+		$('.datepicker').dcalendar();
+		$('.datepicker').dcalendarpicker();
+
+		    var max_fields = 10; //maximum input boxes allowed
+		    var x = 1; //initlal text box count
+		
+		$('#add').click(function () {		   
+			if(x < max_fields){ //max input box allowed
+			    x++; //text box increment
+			    $("#addblock").before('<div class="col-md-12 col-sm-12" id="deceased">	<a href="#" class="remove_field" title="Remove">X</a>	<div class="form-group col-md-3 col-sm-3">            <label for="name">Name*</label>            <input type="text" class="form-control input-sm" id="name" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="gender">Gender*</label>            <input type="text" class="form-control input-sm" id="gender" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="age">Age*</label>            <input type="text" class="form-control input-sm" id="age" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="DOB">Date of Birth or Exact Birth Year*</label>            <input type="text" class="form-control input-sm datepicker" id="DOB'+x+'" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="DOD">Date of Death or Exact Death Year*</label>             <input type="text" class="form-control input-sm datepicker" id="DOD'+x+'" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="mother">Deceased Person\'s Mother Name*</label>            <input type="text" class="form-control input-sm" id="mother" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">            <label for="father">Deceased Person\'s Father Name*</label>            <input type="text" class="form-control input-sm" id="father" placeholder="">        </div>	<div class="form-group col-md-3 col-sm-3">	    <label for="photo">Upload Photo*</label>	    <input type="file" id="photo">	    <p class="help-block">Please upload individual photo. Group photo is not acceptable.</p>	</div></div>');
+
+				$('.datepicker').dcalendarpicker();
+			}  else{
+				alert("Only 10 Names Allowed");
+			}  
+		});
+		$(document).on('click', '.remove_field', function(e){
+		        e.preventDefault(); 
+			$(this).parent('div').remove(); 
+			x--;
+		});
+
+		
+	});
+	</script>
+  </head>
+  <body>
+  
+  
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <br>
+  <br>
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+           
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-10">
+                <ul class="nav navbar-nav">
+				<br>
+				
+                    <li>
+                        <a href="index.html">Recent</a>
+                    </li>
+                   <li>
+                        <a href="populer.html">Most Popular</a>
+                    </li>
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i>Categories</i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                          <li>
+                            <a href="#">
+                                <div>
+                                <i class="fa fa-comment fa-fw"></i> Bakso
+                                </div>
+                            </a>
+                        </li>
+                        <li><a href="#">Sate</a>
+                        </li>
+                        <li><a href="kategoriayamuser.html">Ayam</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+					
+					
+                </ul>
+				
+				<ul class="nav navbar-nav navbar-right">
+				<li>
+				<br>
+				
+					<input  type='text' name='search' >
+					<button name="submit" class="btn"><span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;Search Review&nbsp;&nbsp;</button>
+				</li>
+				</ul>
+				
+            </div>
+			
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+		
+		
+    </nav>
+	
+	
+
+    	
+	
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+	<div class="container">
+	
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-3">
+	
+			<ul class="nav navbar-nav">
+			
+			<li class="navbar-brand" href="#">RATE YOUR FOOD</a>
+			</li>
+				 <li>
+                        <a href="index.html"><span class="glyphicon glyphicon-home"></span>Home</a>
+                    </li>
+                    <li>
+                        <a href="profile.html"><span class="glyphicon glyphicon-user"></span>Profile</a>
+                    </li>
+                   <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="glyphicon glyphicon-bell">Notification</i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts">
+                          <li>
+                            <a href="review.html">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> Sule has Comment On Your Review
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="review.html">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> Raisa has Comment On Your Review
+                                   &nbsp;&nbsp;&nbsp; <span class="pull-right text-muted small">10minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                    <!-- /.dropdown-user -->
+                </li>
+					<li>
+					<a href="formreview.html"> <span class="glyphicon glyphicon-pencil"></span>Create Review</a>
+					
+					</li>
+            </ul>
+			<ul class="nav navbar-nav navbar-right">
+                <li><a href="form.html"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+            </ul>
+				</div>
+				</div>
+				
+				</nav>
+	
+					
+                    </li>
+					
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<br>
+<br>
+<br>
+<br>
+<div class="panel panel-primary" style="margin:10px;">
+	<div class="panel-heading">
+        	<h3 class="panel-title">Form Review </h3>
+	</div>
+<div class="panel-body">
+    <form action="review.html" method="post">
+<div class="col-md-12 col-sm-12">
+	<div class="form-group col-md-6 col-sm-3">
+            <label for="photo">Photo*</label>
+	    <input type="file" id="photo" accept="image/*" name="foto" required />
+	    <p class="help-block">Silahkan Upload Foto Makanan Anda.</p>
+        </div>
+      
+
+  
+	<div class="form-group col-md-6 col-sm-6">
+	    
+		
+		<label for="name">Judul Review	</label>
+            <input type="text" class="form-control input-sm" name="judul" placeholder="Masukan Judul Review" required />
+			
+			
+			<label for="email">Nama Makanan</label>
+            <input type="text" class="form-control input-sm" name="nama" placeholder="Masukan Nama Makanan " required />
+			
+			<label for="mobile">Harga</label>
+			<div class="form-group input-group">
+            <span class="input-group-addon">Rp</span>
+            <input type="text" class="form-control" name="harga" placeholder="Masukan Harga" required />
+                                          
+           </div>
+            <!--<input type="text" class="form-control input-sm" name="harga" placeholder="Masukan Harga" required />-->
+			
+			<label for="mobile">Alamat</label>
+			
+			<textarea class="form-control input-sm" name="alamat" rows="3" placeholder="Masukan Alamat" required /></textarea>
+	</div>
+	
+	<div class="form-group col-md-12 col-sm-6">
+	      <label for="address">Review</label>
+	      <textarea class="form-control input-sm" name="review" placeholder="masukan Review Anda" rows="10" col="5"required /></textarea>
+	   </div>
+	
+	
+	
+</div>
+
+<div class="col-md-12 col-sm-12" >
+	<div class="form-group col-md-6 col-sm-3" align="right">
+		<input type='submit' class="btn btn-primary" value="Submit"/>
+	</div>
+</div>
+
+</div>
+</form>
+</div>
+
+
+
+
+</body>
+</html>
